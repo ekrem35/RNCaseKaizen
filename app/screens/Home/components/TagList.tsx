@@ -11,12 +11,7 @@ import {
 
 import * as tagApi from '../../../api/tags';
 
-interface ITag {
-  IconUrl: string;
-  Id: number;
-  Name: string;
-  Rank: number;
-}
+import type {ITag} from '../../../types/tags';
 
 export default function TagList() {
   const [tags, setTags] = useState<ITag[]>([]);
