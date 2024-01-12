@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "app/fonts/Helvetica-Black.otf",
+      "sha1": "2468e8fdc16ba474862624c294eb3a0567991474"
+    },
+    {
+      "path": "app/fonts/Helvetica-Bold.otf",
+      "sha1": "a0f68896302b706b02eb38beae904ffd64067357"
+    },
+    {
+      "path": "app/fonts/Helvetica-Light.otf",
+      "sha1": "de80fe5c82fda95757ada41da0d2affc36ed45e0"
+    },
+    {
+      "path": "app/fonts/Helvetica-Medium.otf",
+      "sha1": "f1f14f6def94ce5395f8cb9bd8aa066d59a931e5"
+    }
+  ]
+}
