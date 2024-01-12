@@ -10,6 +10,7 @@ import {
 import screens from '../screens';
 
 import icons from './icons';
+import HomeStackNavigator from './HomeStackNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -101,17 +102,24 @@ function TabBar(props: BottomTabBarProps) {
                   {getRouteIcon(route.name, isFocused)}
 
                   <Text
-                    style={{
-                      color: isFocused ? '#28AF6E' : '#979798',
-                      textAlign: 'center',
-                      fontFamily: 'Helvetica',
-                      fontStyle: 'normal',
-                      fontWeight: '400',
-                      fontSize: 10,
-                      lineHeight: 12,
-                      letterSpacing: -0.24,
-                      marginTop: 4.87,
-                    }}>
+                    style={[
+                      {
+                        fontFamily: 'Helvetica',
+                        fontStyle: 'normal',
+                        fontWeight: '700',
+                        fontSize: 10,
+                        lineHeight: 11,
+                        display: 'flex',
+                        alignItems: 'center',
+                        textAlign: 'center',
+                        letterSpacing: 0.5,
+                        marginTop: 6,
+                        textTransform: 'uppercase',
+                      },
+                      {
+                        color: isFocused ? '#1D1E1C' : '#bbbbbb',
+                      },
+                    ]}>
                     {label}
                   </Text>
                 </View>
@@ -130,7 +138,7 @@ export default function TabNavigator() {
       screenOptions={{
         headerShown: false,
       }}>
-      <Tab.Screen name="HomeScreen" component={screens.Home} />
+      <Tab.Screen name="HomeScreen" component={HomeStackNavigator} />
       <Tab.Screen name="DahaDahaScreen" component={screens.DahaDaha} />
       <Tab.Screen name="WalletScreen" component={screens.Wallet} />
     </Tab.Navigator>
