@@ -1,10 +1,12 @@
 import React from 'react';
 
 import {SafeAreaView, Text} from 'react-native';
+import Header from '../components/Header';
 
 export default function Wallet() {
   return (
     <SafeAreaView>
+      <Header />
       <Text
         style={{
           letterSpacing: 0.5,

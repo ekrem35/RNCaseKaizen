@@ -1,4 +1,4 @@
-import Home from './Home';
+import Home from './Home/HomeScreen';
 import DahaDaha from './DahaDaha';
 import Wallet from './Wallet';
 
