@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import {
   View,
@@ -11,7 +11,7 @@ import {
   Text,
 } from 'react-native';
 
-import Carousel, {Pagination} from 'react-native-snap-carousel';
+import Carousel from 'react-native-snap-carousel';
 
 import RenderHtml from 'react-native-render-html';
 
@@ -21,13 +21,19 @@ import {useNavigation} from '@react-navigation/native';
 
 import * as promotionApi from '../../../api/promotion';
 import {IPromotion} from '../../../types/promotion';
+import CampaignPagination from './CampaignPagination';
 
 export default function CampaignList() {
   const navigation = useNavigation();
 
-  const screenWidth = useWindowDimensions().width;
+  const paginationRef = useRef<{
+    updateActiveItem: (val: number) => void;
+    updateBgColor: (clr: string) => void;
+  }>(null);
 
-  const [activeItem, setActiveItem] = useState(0);
+  const activeItemRef = useRef(0);
+
+  const screenWidth = useWindowDimensions().width;
 
   const [campaigns, setCampaigns] = useState<IPromotion[]>([]);
 
@@ -195,7 +201,13 @@ export default function CampaignList() {
   }
 
   const onSnapToItem = (index: number) => {
-    setActiveItem(index);
+    activeItemRef.current = index;
+
+    paginationRef.current?.updateActiveItem(index);
+    paginationRef.current?.updateBgColor(
+      campaigns.find((_, idx) => idx === activeItemRef.current)
+        ?.ListButtonTextBackGroudColor || '#222',
+    );
   };
 
   const getCarouselItemLayout = (_: any, index: number) => ({
@@ -225,24 +237,9 @@ export default function CampaignList() {
         initialNumToRender={3}
       />
 
-      <Pagination
+      <CampaignPagination
+        onRef={ref => (paginationRef.current = ref)}
         dotsLength={campaigns.length}
-        activeDotIndex={activeItem}
-        dotContainerStyle={{
-          width: 10,
-        }}
-        dotStyle={{
-          width: 19,
-          height: 8,
-          borderRadius: 5,
-          marginHorizontal: 8,
-          backgroundColor: campaigns.find((_, idx) => idx === activeItem)
-            ?.ListButtonTextBackGroudColor,
-        }}
-        inactiveDotStyle={{
-          backgroundColor: '#a4a4a4',
-          width: 8,
-        }}
       />
     </View>
   );
