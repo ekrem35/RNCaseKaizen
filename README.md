@@ -1,5 +1,19 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+
+## if you want to get production build
+
+### For android run command below
+
+```bash cd android ```
+
+```bash ./gradlew assembleRelease```
+
+after the build an apk file extracted to `root/android/app/build/outputs/apk/release/apk_file`
+
+### For ios app package you can use Xcode build system to archive
+
+
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
