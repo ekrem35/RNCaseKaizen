@@ -32,7 +32,14 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Helvetica-Black.otf</string>
+		<string>Helvetica-Bold.otf</string>
+		<string>Helvetica-Light.otf</string>
+		<string>Helvetica-Medium.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -47,12 +54,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Helvetica-Black.otf</string>
-		<string>Helvetica-Bold.otf</string>
-		<string>Helvetica-Light.otf</string>
-		<string>Helvetica-Medium.otf</string>
-	</array>
 </dict>
 </plist>
